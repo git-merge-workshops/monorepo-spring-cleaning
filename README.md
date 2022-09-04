@@ -1,17 +1,42 @@
-<h1 align="center">Workshop Title</h1>
-<h5 align="center">@facilitators</h3>
+<h1 align="center">Monorepo Spring Cleaning</h1>
+<h5 align="center">@pmartindev</h3>
 
 <p align="center">
   <a href="#mega-prerequisites">Prerequisites</a> •  
   <a href="#books-resources">Resources</a>
 </p>
 
-> Workshop Description.
+> This workshop is a hands-on session to help you clean up your monorepo. We will be using popular open source tools to discover and clean up your monorepo.
+
 
 ## :mega: Prerequisites
-- point 1
-- point 2
+There are 3 options for running this workshop:
+### 1. Codespaces
+Within this repository, click on the `Code` button and select `Open with Codespaces`. This will open a new Codespace with all the tools you need to run this workshop.
+
+### 2. Local w/ Docker
+If you have Docker installed, you can run the workshop locally. Run the following command to start the workshop:
+```bash
+cd .devcontainer
+docker build . -t monorepo-workshop
+docker run -it -p 3000:3000 monorepo-workshop
+```
+
+### 3. Local
+If you don't have Docker installed, you can run the workshop locally, you will need to install the following tools:
+### Tools
+- Git 2.34 or newer
+  - [Linux](https://git-scm.com/download/linux)
+  - [MacOS](https://git-scm.com/download/mac)
+  - [Windows](https://git-scm.com/download/win)
+- git filter-repo
+- git-sizer 
+- git lfs
+
+### Repositories
+:triangular_flag_on_post:Disclaimer:triangular_flag_on_post:: THe following are very large repositories, and may take a while to clone...
+- torvalds/linux
 
 ## :books: Resources
-- [Resource 1]()
+- [The Monorepo Book](https://monorepo-book.github.io/)
 - [Resource 2]()

@@ -1,0 +1,43 @@
+ {
+    "name": "git-merge-workshops/monorepo-cleanup",
+    "onCreateCommand": ".devcontainer/on-create-command.sh",
+    "postAttachCommand": ".devcontainer/post-attach-command.sh",
+    "image": "ghcr.io/github/github/bootstrap-nightly:latest",
+    "hostRequirements": {
+        "storage": "64gb",
+        "memory": "64gb"
+    },
+    "extensions": [
+        "github.copilot",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens"
+    ],
+    "forwardPorts": [
+        80, 22, 443
+    ],
+    "appPort": [
+        80, 22, 443
+    ],
+    "portsAttributes": {
+        "80": {
+          "label": "web"
+        },
+        "22": {
+          "label": "ssh"
+        },
+        "443": {
+          "label": "https"
+        }
+    },
+    "customizations": {
+        "codespaces": {
+            "repositories": {
+                "git-merge-workshops/monorepo-cleanup": {
+                    "permissions": {
+                        "contents": "read"
+                    }
+                }
+            }
+        }
+    }
+ }
