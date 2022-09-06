@@ -11,4 +11,8 @@ RUN pip3 install --no-cache --upgrade pip setuptools
 RUN pip3 install git-filter-repo
 WORKDIR /source
 RUN git clone --bare https://github.com/torvalds/linux
+# Attempting to modify linux
+RUN cd /source/linux
+RUN git checkout -b temp 5489377ce40d
+
 COPY --from=git-sizer-build-env /go/bin/git-sizer /usr/bin/git-sizer
