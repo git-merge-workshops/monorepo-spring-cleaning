@@ -44,6 +44,7 @@ git clone https://github.com/torvalds/linux
 ### Rewriting History with git filter-repo
 [History Rewrite](lessons/history-rewrite.md)
 
+## :chains: Grafting 
 ### Git replace
 [Git Replace](lessons/git-replace.md)
 
