@@ -44,11 +44,11 @@ git clone https://github.com/torvalds/linux
 ### Rewriting History with git filter-repo
 [History Rewrite](lessons/history-rewrite.md)
 
-## :chains: Grafting 
+## :chains: Activity 3: Grafting 
 ### Git replace
 [Git Replace](lessons/git-replace.md)
 
-### Activity 3: Grafting a repository
+### Grafting a repository
 [Repository Grafting](lessons/repository-grafting.md)
 
 ### :star: Conclusion 
