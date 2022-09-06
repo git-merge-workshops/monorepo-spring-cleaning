@@ -3,10 +3,6 @@
     "onCreateCommand": ".devcontainer/on-create-command.sh",
     "postAttachCommand": ".devcontainer/post-attach-command.sh",
     "image": "ghcr.io/pmartindev/monorepo-cleanup:latest",
-    "hostRequirements": {
-        "storage": "64gb",
-        "memory": "64gb"
-    },
     "extensions": [
         "github.copilot",
         "dbaeumer.vscode-eslint",
@@ -27,17 +23,6 @@
         },
         "443": {
           "label": "https"
-        }
-    },
-    "customizations": {
-        "codespaces": {
-            "repositories": {
-                "git-merge-workshops/monorepo-cleanup": {
-                    "permissions": {
-                        "contents": "read"
-                    }
-                }
-            }
         }
     }
  }

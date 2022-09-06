@@ -39,8 +39,8 @@ git clone https://github.com/torvalds/linux
 ```
 - 
 
-Activity 1: Analyse 
-
+### :mag: Activity 1: Analyse 
+For the first activity, we will be using git-sizer to analyse the size of the repository. git-sizer is a tool that will help you understand the size of your repository and identify large files and commits.
 
 ## :books: Resources
 - [The Monorepo Book](https://monorepo-book.github.io/)
