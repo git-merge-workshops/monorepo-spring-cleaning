@@ -323,6 +323,7 @@ git log --follow --diff-filter=A drivers/gpu/drm/amd/include/asic_reg/nbio/nbio_
 ```
 
 After performing a`git filter-repo` will also output a list of rewritten shas. This can be useful for any implementations that specifically reference commits by their sha. 
+
 ```
 old                                      new
 1da177e4c3f41524e886b7f1b8a0c1fc7321cac2 76c3073a888ae7f4790a146784bb5c34fc24b9d2
@@ -335,9 +336,9 @@ baaa2c512dc1c47e3afeb9d558c5323c9240bd21 db4686812835a497d6f5de1e6cf6e8010a3fc0c
 Rewriting history can be expensive, time consuming, and is not always the correct solution. An organization may be so heavily invested in their monorepo, that a rewrite is totally unrealistic `git replace` is a useful tool for rewriting history. Given a particular commit SHA, it allows you to replace a commit in history with another commit.
 
 ```mermaid
-gitGraph
-  checkout main
-  checkout monorepo
+gitGraph;
+  checkout main;
+  checkout monorepo;
 ```
 
 - [The Monorepo Book](https://monorepo-book.github.io/)
