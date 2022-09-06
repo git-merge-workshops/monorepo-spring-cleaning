@@ -40,7 +40,7 @@ git clone https://github.com/torvalds/linux
 ### Gathering blob sizing with git filter-repo
 [Git Filter-repo Stats](lessons/git-filter-repo-stats.md)
 
-## :mop: Activity 2: Clean up
+## :broom: Activity 2: Clean up
 ### Rewriting History with git filter-repo
 [History Rewrite](lessons/history-rewrite.md)
 
