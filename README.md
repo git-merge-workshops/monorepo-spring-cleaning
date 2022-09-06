@@ -48,7 +48,7 @@ git clone https://github.com/torvalds/linux
 ### Git replace
 [Git Replace](lessons/git-replace.md)
 
-### Grafting a repository
+### Activity 3: Grafting a repository
 [Repository Grafting](lessons/repository-grafting.md)
 
 ### :star: Conclusion 
