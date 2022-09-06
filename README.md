@@ -15,7 +15,7 @@ There are 3 options for running this workshop:
 Within this repository, click on the `Code` button and select `Open with Codespaces`. This will open a new Codespace with all the tools you need to run this workshop.
 
 ### 2. Local w/ Docker
-If you have Docker installed, you can run the workshop locally. Run the following command to start the workshop:
+If you have Docker installed, you can run the workshop locally. Run the following commands to start the workshop:
 ```bash
 cd .devcontainer
 docker build . -t monorepo-workshop
@@ -31,11 +31,16 @@ If you don't have Docker installed, you can run the workshop locally, you will n
   - [Windows](https://git-scm.com/download/win)
 - git filter-repo
 - git-sizer 
-- git lfs
 
-### Repositories
-:triangular_flag_on_post:Disclaimer:triangular_flag_on_post:: THe following are very large repositories, and may take a while to clone...
-- torvalds/linux
+### Steps
+- Clone torvalds/linux
+```bash
+git clone https://github.com/torvalds/linux
+```
+- 
+
+Activity 1: Analyse 
+
 
 ## :books: Resources
 - [The Monorepo Book](https://monorepo-book.github.io/)

@@ -2,7 +2,7 @@
     "name": "git-merge-workshops/monorepo-cleanup",
     "onCreateCommand": ".devcontainer/on-create-command.sh",
     "postAttachCommand": ".devcontainer/post-attach-command.sh",
-    "image": "ghcr.io/github/github/bootstrap-nightly:latest",
+    "image": "ghcr.io/pmartindev/monorepo-cleanup:latest",
     "hostRequirements": {
         "storage": "64gb",
         "memory": "64gb"
