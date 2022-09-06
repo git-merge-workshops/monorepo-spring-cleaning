@@ -336,9 +336,11 @@ baaa2c512dc1c47e3afeb9d558c5323c9240bd21 db4686812835a497d6f5de1e6cf6e8010a3fc0c
 Rewriting history can be expensive, time consuming, and is not always the correct solution. An organization may be so heavily invested in their monorepo, that a rewrite is totally unrealistic `git replace` is a useful tool for rewriting history. Given a particular commit SHA, it allows you to replace a commit in history with another commit.
 
 ```mermaid
-gitGraph;
-  checkout main;
-  checkout monorepo;
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
 ```
 
 - [The Monorepo Book](https://monorepo-book.github.io/)
