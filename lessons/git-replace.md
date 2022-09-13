@@ -7,3 +7,5 @@ Create a graft commit. A new commit is created with the same content as <commit>
 ```
 
 How can we use this with the monorepo? Since we don't want to rewrite history, we can create two copies of the repository, one containing all of the historical data and the other with the HEAD of the historical repository and any other future commits. With this approach, the historical repository will remain untouched (read-only) and the new repository will be used for all future development.
+
+:arrow_backward: [Back to Main](../README.md)

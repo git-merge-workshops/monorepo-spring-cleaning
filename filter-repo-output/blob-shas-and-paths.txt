@@ -1,0 +1,14 @@
+=== Files by sha and associated pathnames in reverse size ===
+Format: sha, unpacked size, packed size, filename(s) object stored as
+  e71dc841d36bfa926e13974b45cdcf3bd2d893cb   52428800   52444806 data/backup_1.bak
+  43f93d994fd67db15869fa8995ef59ff720f26e3   52428800   52444806 data/backup_1.bak
+  38db2f5d807eba530969165b73f6b57b159e1fd1   52428800   52444806 data/backup_1.bak
+  d5985754530d1fe3e02d7cb5943a07f1be33b5c9        690        314 hello_world_db.py
+  55bcd5b01d55b2d48e2c79827da651309fd9c199        319        227 README.md
+  ba9e4bc0dc047625da3f38a23c035dc5c3a36e9f        237        165 hello_world.py
+  d5c0fa6d0681252d6d68613f3128af2672cd0ea4        187        132 hello_world_helpers.py
+  7c3148fee37b5a571f47e283416bff165c6f20c4         99         89 README.md
+  a0dcf02cf8aae2939c18c94bc4f28d10be49bfb7         49         53 README.md
+  09b06a87738d6b111d968006d4336647357ecf10        118         37 hello_world.py
+  2fd2ea94a2b879397d6509d5a9c50952515ee941        171         22 hello_world.py
+  1f4049640e26bd48cd1b561bce667db620358986        394         20 hello_world_db.py

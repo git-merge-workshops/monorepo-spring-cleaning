@@ -1,0 +1,7 @@
+=== All paths by reverse accumulated size ===
+Format: unpacked size, packed size, date deleted, path name
+   157286400  157334418 2022-09-13 data/backup_1.bak
+         467        369 <present>  README.md
+        1084        334 <present>  hello_world_db.py
+         526        224 <present>  hello_world.py
+         187        132 <present>  hello_world_helpers.py

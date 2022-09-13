@@ -1,8 +1,12 @@
 ### Grafting a repository
+When rewriting the history of our repostiory is not an option, we can use `git replace` to graft two repositories together. This will allow us to keep an archived history of our repository while still being able to maintain future development. We start this process with a fresh clone of our repository.
+
+![Main Repository](../images/main_transparent.png "Main Repository")
+
 Our first step is to copy our monorepo into a new directory. We will use one as the historical repository and the other as the future repository.
 
 ```bash
-cp -r linux linux-historical
+cp -r a-bad-monorepo  a-bad-monorepo-historical
 ```
 
 Next, we will take our future development repository (linux) and create it as a new repository, with the base commit as the HEAD of the historical repository. The easiest and simplest method of doing this is to delete our `.git` directory, and re-initialize it as a new git repo. We can do this by running the following commands:
@@ -19,8 +23,12 @@ git add --all
 git commit -m "Initial commit of linux repository. You can find the historical repository at https://github.com/torvalds/linux"
 ```
 
-Now that we have a new repository, we can add our historical repository as a remote and fetch the history from it:
-NOTE: We will be using the local copy of the historical monorepo, but in a real world collaborative setting, you would most likely use a remote repository hosted by a 3rd party source provider.
+Once completed, we should now have two different repositories, one with only 1 commit and another replica of the monorepo with the entire history.
+
+![Separated Repository](../images/separated_transparent.png "Main Repository")
+
+Now that we have a new repository, we can add our historical repo as a remote and fetch the history from it:
+NOTE: We will be using the local copy of the historical monorepo, but in a real world collaborative setting, you would most likely fetch a remote repostiory hosted by a 3rd party source provider.
 
 ```bash
 git remote add historical ../linux-historical
@@ -44,7 +52,11 @@ git rev-parse --short HEAD
 git rev-parse --short FETCH_HEAD
 ```
 
-Finally, to graft the FETCH_HEAD to the HEAD our our repository, we can run the following command:
+Finally, we can graft the FETCH_HEAD to the HEAD our monorepo.
+
+![Main Repository](../images/grafted_transparent.png "Main Repository")
+
+This can be achieved with `git replace` by the following command:
 
 ```bash
 git replace --graft HEAD FETCH_HEAD
@@ -55,7 +67,12 @@ For our example, the HEAD commit is our first commit in the repository, but goin
 git replace --graft c40e8341e3b3 FETCH_HEAD
 ```
 
-Now we can verify that we have grafted the historical repository is displayed correctly in our new repository:
+The repository should look now appear as a single repository with the entire history of the monorepo.
+
+![Final Repository](../images/final_transparent.png "Final Repository")
+
+Running `git log` should now correctly output the lasted commit along with the entire history of the monorepo.
+
 ```bash
 git log --oneline | head -n 10
 ```
@@ -67,3 +84,5 @@ git log --oneline | head -n 10
 ```
 
 And with that, we've successfully grafted our repositories together! :tada: :tada:
+
+:arrow_backward: [Back to Main](../README.md)

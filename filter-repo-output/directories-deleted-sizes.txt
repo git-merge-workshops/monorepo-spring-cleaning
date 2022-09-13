@@ -1,0 +1,3 @@
+=== Deleted directories by reverse size ===
+Format: unpacked size, packed size, date deleted, directory name
+   157286400  157334418 2022-09-13 data

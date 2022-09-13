@@ -1,0 +1,3 @@
+=== Deleted paths by reverse accumulated size ===
+Format: unpacked size, packed size, date deleted, path name(s)
+   157286400  157334418 2022-09-13 data/backup_1.bak

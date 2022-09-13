@@ -1,16 +1,22 @@
+Processing blobs: 12                        
+Processing trees: 14                        
+Processing commits: 11                        
+Matching commits to trees: 11                        
+Processing annotated tags: 0                        
+Processing references: 3                        
 | Name                         | Value     | Level of concern               |
 | ---------------------------- | --------- | ------------------------------ |
 | Overall repository size      |           |                                |
 | * Commits                    |           |                                |
-|   * Count                    |     2     |                                |
-|   * Total size               |  1.32 KiB |                                |
+|   * Count                    |    11     |                                |
+|   * Total size               |  3.58 KiB |                                |
 | * Trees                      |           |                                |
-|   * Count                    |     2     |                                |
-|   * Total size               |    74 B   |                                |
-|   * Total tree entries       |     2     |                                |
+|   * Count                    |    14     |                                |
+|   * Total size               |  1.70 KiB |                                |
+|   * Total tree entries       |    43     |                                |
 | * Blobs                      |           |                                |
-|   * Count                    |     2     |                                |
-|   * Total size               |   114 B   |                                |
+|   * Count                    |    12     |                                |
+|   * Total size               |   150 MiB |                                |
 | * Annotated tags             |           |                                |
 |   * Count                    |     0     |                                |
 | * References                 |           |                                |
@@ -21,25 +27,27 @@
 | Biggest objects              |           |                                |
 | * Commits                    |           |                                |
 |   * Maximum size         [1] |   702 B   |                                |
-|   * Maximum parents      [1] |     1     |                                |
+|   * Maximum parents      [2] |     1     |                                |
 | * Trees                      |           |                                |
-|   * Maximum entries      [2] |     1     |                                |
+|   * Maximum entries      [3] |     5     |                                |
 | * Blobs                      |           |                                |
-|   * Maximum size         [3] |    57 B   |                                |
+|   * Maximum size         [4] |  50.0 MiB | *****                          |
 |                              |           |                                |
 | History structure            |           |                                |
-| * Maximum history depth      |     2     |                                |
+| * Maximum history depth      |    11     |                                |
 | * Maximum tag depth          |     0     |                                |
 |                              |           |                                |
 | Biggest checkouts            |           |                                |
-| * Number of directories  [2] |     1     |                                |
-| * Maximum path depth     [2] |     1     |                                |
-| * Maximum path length    [2] |     9 B   |                                |
-| * Number of files        [2] |     1     |                                |
-| * Total size of files    [2] |    57 B   |                                |
+| * Number of directories  [3] |     2     |                                |
+| * Maximum path depth     [3] |     2     |                                |
+| * Maximum path length    [5] |    22 B   |                                |
+| * Number of files        [3] |     5     |                                |
+| * Total size of files    [3] |  50.0 MiB |                                |
 | * Number of symlinks         |     0     |                                |
 | * Number of submodules       |     0     |                                |
 
-[1]  b50a0bfa10fbf1aa1e3628118963d382ad086530 (refs/heads/main)
-[2]  35f3cdb2b0ae964a6515fec97fcf6bb7e82ca00c (refs/heads/main^{tree})
-[3]  5548f6eb7072438453d12827630962433d345ec1 (refs/heads/main:README.md)
+[1]  dbd4363b4b714b13bdb054aac8dc0da5f565867f
+[2]  eab8ad40a8fbe87d10ba552ed2fb516530290464 (refs/heads/main)
+[3]  5fdbcd4cff31fee89e070827c264f97b736b277f (dbd4363b4b714b13bdb054aac8dc0da5f565867f^{tree})
+[4]  43f93d994fd67db15869fa8995ef59ff720f26e3 (dbd4363b4b714b13bdb054aac8dc0da5f565867f:data/backup_1.bak)
+[5]  25a332abb41e2897e0defaa7f4d318a2de08ecf6 (refs/heads/main^{tree})

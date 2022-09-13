@@ -67,3 +67,5 @@ drivers/gpu/drm/amd/include/asic_reg/raven1/NBIO/nbio_7_0_sh_mask.h
 
 You will notice that in some cases, a filename is listed multiple times. This indicates that changes to the file have been commited multiple times in the history of the repository. For large files (in particular large, compressed binary files), this can be problematic as large binaries do not tend to compress nor diff well. 
 
+
+:arrow_backward: [Back to Main](../README.md)
