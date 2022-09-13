@@ -1,7 +1,7 @@
  {
     "name": "git-merge-workshops/monorepo-cleanup",
     "postAttachCommand": ".devcontainer/post-attach-command.sh",
-    "image": "ghcr.io/pmartindev/monorepo-cleanup:latest",
+    "image": "ghcr.io/git-merge-workshops/monorepo-spring-cleaning:latest",
     "extensions": [
         "github.copilot",
         "dbaeumer.vscode-eslint",
