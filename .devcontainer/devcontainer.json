@@ -1,6 +1,6 @@
  {
     "name": "git-merge-workshops/monorepo-cleanup",
-    "postAttachCommand": ".devcontainer/post-attach-command.sh",
+    "onCreateCommand": ".devcontainer/post-attach-command.sh",
     "image": "ghcr.io/git-merge-workshops/monorepo-spring-cleaning:latest",
     "extensions": [
         "github.copilot",
