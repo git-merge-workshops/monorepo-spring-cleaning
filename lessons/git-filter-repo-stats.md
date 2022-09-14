@@ -2,42 +2,42 @@
 For the second activity, we will be using git filter-repo to determine and analyse large blobs in a repository.
 While the main purpose of `git filter-repo` is to rewrite history, it can also be used to gather information about blobs in your repository.
 
-### Note: this command may take a while to run... for simplicity, please consider using 
-Navaigate to the monorepo directory and run the following command:
+Navigate to the monorepo directory and run the following command:
 ```bash
+cd a-bad-monorepo
 git filter-repo --analyze
 ```
-Within the repository, navigate to the `.git/filter-repo/analysis`
+`git filter-repo` begin to process all of the objects in the repository. Once ithas finished, within the repository, navigate to `.git/filter-repo/analysis`
 
 ```bash
 cd .git/filter-repo/analysis
 ```
 
 You will notice a handful of files, but the one we are interested in for now is the `blobs-shas-and-path.txt` file.
-Open the file
+Open the file:
 ```bash
 code blobs-shas-and-path.txt
 ```
 
-You will notice a large list of files
+You will notice a list of files, some repeated multiple times.
 ```bash
 === Files by sha and associated pathnames in reverse size ===
 Format: sha, unpacked size, packed size, filename(s) object stored as
-  e27fdc0c643c689883b111dc271f8cdadac72d57   16415223    1209962 drivers/gpu/drm/amd/include/asic_reg/nbio/nbio_7_2_0_sh_mask.h
-  54b0e4623971993d933472b104485a0219b2e19e   16414003    1185013 drivers/gpu/drm/amd/include/asic_reg/nbio/nbio_7_2_0_sh_mask.h
-  198c14a3b3d3795bd6cf5237cf179b512aed6114   12839488     986979 drivers/gpu/drm/amd/include/asic_reg/nbio/nbio_2_3_sh_mask.h
-  a02b6794337286bc12c907c33d5d75537c240bd0   14151474     925100 [drivers/gpu/drm/amd/include/asic_reg/nbio/nbio_6_1_sh_mask.h, drivers/gpu/drm/amd/include/asic_reg/vega10/NBIO/nbio_6_1_sh_mask.h]
-  068f3b16a56b41cc8fc2b6b2aad0750935219382   11368060     795948 drivers/gpu/drm/amd/include/asic_reg/dpcs/dpcs_4_2_0_sh_mask.h
-  ee8c15e4543d7922cb11341e03d3c9da7b091285   12748346     769404 drivers/gpu/drm/amd/include/asic_reg/nbio/nbio_7_0_sh_mask.h
-  88602479a1aa97480e65e976fff8211bb39353b4   12745358     769105 [drivers/gpu/drm/amd/include/asic_reg/nbio/nbio_7_0_sh_mask.h, drivers/gpu/drm/amd/include/asic_reg/raven1/NBIO/nbio_7_0_sh_mask.h]
-  d8ad862b3a748dd82780ab7295e989d60892dfa3    6812925     484277 drivers/gpu/drm/amd/include/asic_reg/vega10/DC/dce_12_0_sh_mask.h
-  1f22c9ab66d407accb797e532ab194b043970a85    1112908     464689 drivers/net/bnx2x_init_values.h
-  396c33fafc9140b47cb0a56eb0746024891f0b05    6642978     452649 drivers/gpu/drm/amd/include/asic_reg/dcn/dcn_3_0_2_sh_mask.h
-  63019055e4bb56962ba5767f662136a787921c4f    1000677     413803 drivers/net/bnx2x_init_values.h
+  e71dc841d36bfa926e13974b45cdcf3bd2d893cb   52428800   52444806 data/backup_1.bak
+  43f93d994fd67db15869fa8995ef59ff720f26e3   52428800   52444806 data/backup_1.bak
+  38db2f5d807eba530969165b73f6b57b159e1fd1   52428800   52444806 data/backup_1.bak
+  d5985754530d1fe3e02d7cb5943a07f1be33b5c9        690        314 hello_world_db.py
+  ba9e4bc0dc047625da3f38a23c035dc5c3a36e9f        237        165 hello_world.py
+  d5c0fa6d0681252d6d68613f3128af2672cd0ea4        187        132 hello_world_helpers.py
+  7c3148fee37b5a571f47e283416bff165c6f20c4         99         89 README.md
+  a0dcf02cf8aae2939c18c94bc4f28d10be49bfb7         49         53 README.md
+  09b06a87738d6b111d968006d4336647357ecf10        118         37 hello_world.py
+  2fd2ea94a2b879397d6509d5a9c50952515ee941        171         22 hello_world.py
+  1f4049640e26bd48cd1b561bce667db620358986        394         20 hello_world_db.py
 ```
 Let's break down what we are seeing here:
 
-- `sha` refers to the SHA of the git object itself. We an use this to do things such as list the contents of the blob, 
+- `sha` refers to the SHA of the git object itself. We an use this to do things such as list the contents of the blob with `git cat-file` similar to the `git sizer` excercise. 
 - `unpacked size` refers to the decompressed size of the blob in bytes. This is the size of the file as it would be if it were extracted from the git repository. (i.e. upon running `git checkout`)
 - `packed size` refers to the compressed size of the blob in bytes. This is the size of the file as it is stored in the git repository.
 - `filename(s)` refers to the path of the file within the repository. If the file is located in multiple places, it will be listed as a comma separated list.
@@ -45,27 +45,34 @@ Let's break down what we are seeing here:
 With this information, we can now determine the largest blobs in the repository history, and investigate them further. One example may be that we want to find which particular commit a large file was introduced. We can do this by running the following command:
 
 ```bash 
-git log --follow --diff-filter=A drivers/gpu/drm/amd/include/asic_reg/nbio/nbio_7_2_0_sh_mask.h
-commit c4dc7b1a54a043d08172f2d3de02578667a7595c
-Author: Alex Deucher <alexander.deucher@amd.com>
-Date:   Thu May 4 13:06:58 2017 -0400
-
-    drm/amdgpu: add register headers for NBIO 7.0
-    
-    Add registers for NBIO 7.0
-    
-    Signed-off-by: Alex Deucher <alexander.deucher@amd.com>
+git --no-pager log --follow  --diff-filter=A -- data/backup_1.bak
 ```
-And we can verify and see all files that were added in this commit by running the following command:
+<details><summary>Output</summary>
 
 ```bash
-git diff-tree --no-commit-id --name-only -r c4dc7b1a54a043d08172f2d3de02578667a7595c
-drivers/gpu/drm/amd/include/asic_reg/raven1/NBIO/nbio_7_0_default.h
-drivers/gpu/drm/amd/include/asic_reg/raven1/NBIO/nbio_7_0_offset.h
-drivers/gpu/drm/amd/include/asic_reg/raven1/NBIO/nbio_7_0_sh_mask.h
+commit 892d146b368d74a64ad8a83af8ecc949ff20a408
+Author: Preston Martin <pmartindev@github.com>
+Date:   Fri Jul 29 17:32:54 2022 -0500
+
+    Add database backup.
 ```
+</details>
+
+With this, we can now see that the file was first introduced in commit `892d14` along with the author and date of the commit. We can verify and see all files that were added in this commit by running the following command:
+
+```bash
+git diff-tree --no-commit-id --name-only -r 892d146b368d74a64ad8a83af8ecc949ff20a408
+```
+<details><summary>Output</summary>
+
+```bash
+data/backup_1.bak
+```
+</details>
 
 You will notice that in some cases, a filename is listed multiple times. This indicates that changes to the file have been commited multiple times in the history of the repository. For large files (in particular large, compressed binary files), this can be problematic as large binaries do not tend to compress nor diff well. 
 
+## Conclusion
+In this lesson, we learned how to use `git filter-repo` to gather information about blobs in a repository. In particular, we learned how to use `git filter-repo` to find the largest blob in our repository, find the commit that it was introduced, and determine what other files were introduced in the same commit.
 
 :arrow_backward: [Back to Main](../README.md)

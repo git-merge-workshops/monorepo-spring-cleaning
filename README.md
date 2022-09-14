@@ -12,7 +12,7 @@
 There are 2 options for running this workshop:
 
 ### 1. Codespaces w/ linux monorepo
-Within this repository, click on the `Code` button and select `Open with Codespaces`. Select all of the default options. This will open a new Codespace with all the tools you need to run this workshop.
+Within this repository, click on the `Code` button and select [`Open with Codespaces`](https://github.com/codespaces/new?repo=git-merge-workshops/monorepo-spring-cleaning). Select all of the default options. This will open a new Codespace with all the tools you need to run this workshop.
 
 ### 2. Local w/ BYOM (Bring Your Own Monorepo)
 If you don't have Docker installed, you can run the workshop locally, you will need to install the following tools:
@@ -25,11 +25,10 @@ If you don't have Docker installed, you can run the workshop locally, you will n
 - git filter-repo
 - git-sizer 
 
-# If you also do not have a monorepo of your own, you may also clone the linux monorepo
-# NOTE: This will take a while to download...
-- Clone torvalds/linux
+# If you also do not have a monorepo of your own, you may also clone from the example repo that is used within codespaces:
+- Clone git-merge-workshops/a-bad-monorepo
 ```bash
-git clone https://github.com/torvalds/linux
+https://github.com/git-merge-workshops/a-bad-monorepo.git
 ```
 
 ## :mag: Activity 1: Analyse 
@@ -52,7 +51,7 @@ git clone https://github.com/torvalds/linux
 [Repository Grafting](lessons/repository-grafting.md)
 
 ### :star: Conclusion 
-Thank you for taking the time two walkthrough this workshop on cleaning up a monorepo. I hope you learned something new and are able to apply some of these techniques to your own monorepo. Please check out the other presentations on Monorepos at Git Merge 2022. 
+Thank you for taking the time to walkthrough this workshop on cleaning up a monorepo!:tada: I hope you learned something new and are able to apply some of these techniques in your own monorepo analysis. Please check out the other presentations on Monorepos at Git Merge 2022.
 
 ## :books: Resources
 - [The Monorepo Book](https://monorepo-book.github.io/)
