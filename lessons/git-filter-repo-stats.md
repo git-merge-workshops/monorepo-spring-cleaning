@@ -7,7 +7,7 @@ Navigate to the monorepo directory and run the following command:
 cd a-bad-monorepo
 git filter-repo --analyze
 ```
-`git filter-repo` begin to process all of the objects in the repository. Once ithas finished, within the repository, navigate to `.git/filter-repo/analysis`
+`git filter-repo` begins to process all of the objects in the repository. Once it has finished, within the repository, navigate to `.git/filter-repo/analysis`
 
 ```bash
 cd .git/filter-repo/analysis
