@@ -7,7 +7,7 @@ Navigate to the monorepo directory and run the following command:
 cd a-bad-monorepo
 git filter-repo --analyze
 ```
-`git filter-repo` begins to process all of the objects in the repository. Once it has finished, within the repository, navigate to `.git/filter-repo/analysis`
+`git filter-repo` begins to process all of the objects in the repository. Once it has finished, navigate to `.git/filter-repo/analysis`
 
 ```bash
 cd .git/filter-repo/analysis
@@ -35,9 +35,9 @@ Format: sha, unpacked size, packed size, filename(s) object stored as
   2fd2ea94a2b879397d6509d5a9c50952515ee941        171         22 hello_world.py
   1f4049640e26bd48cd1b561bce667db620358986        394         20 hello_world_db.py
 ```
-Let's break down what we are seeing here:
+Let's break down what we are seeing:
 
-- `sha` refers to the SHA of the git object itself. We an use this to do things such as list the contents of the blob with `git cat-file` similar to the `git sizer` excercise. 
+- `sha` refers to the SHA of the git object itself. We an use this to do things such as list the contents of the blob with `git cat-file`, similar to what we did in the `git sizer` excercise. 
 - `unpacked size` refers to the decompressed size of the blob in bytes. This is the size of the file as it would be if it were extracted from the git repository. (i.e. upon running `git checkout`)
 - `packed size` refers to the compressed size of the blob in bytes. This is the size of the file as it is stored in the git repository.
 - `filename(s)` refers to the path of the file within the repository. If the file is located in multiple places, it will be listed as a comma separated list.
@@ -73,6 +73,6 @@ data/backup_1.bak
 You will notice that in some cases, a filename is listed multiple times. This indicates that changes to the file have been commited multiple times in the history of the repository. For large files (in particular large, compressed binary files), this can be problematic as large binaries do not tend to compress nor diff well. 
 
 ## Conclusion
-In this lesson, we learned how to use `git filter-repo` to gather information about blobs in a repository. In particular, we learned how to use `git filter-repo` to find the largest blob in our repository, find the commit that it was introduced, and determine what other files were introduced in the same commit.
+In this lesson, we learned how to use `git filter-repo` to gather information about blobs in a repository. In particular, we learned how to use `git filter-repo` to find the largest blob, find the commit that it was introduced, and determine what other files were introduced in the same commit.
 
 :arrow_backward: [Back to Main](../README.md)
