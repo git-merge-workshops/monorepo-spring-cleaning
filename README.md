@@ -9,12 +9,6 @@
 > This workshop is a hands-on session to help you clean up your monorepo. We will be using popular open source tools to discover and aid in the removal of large binaries. We will also learn methods of decreaqsing the size of our repository, but still preserving git history by using git replace to graft two repositories together.
 
 ## :mega: Prerequisites
-There are 2 options for running this workshop:
-
-### 1. Codespaces
-Within this repository, click on the `Code` button and select [`Open with Codespaces`](https://github.com/codespaces/new?repo=git-merge-workshops/monorepo-spring-cleaning). Select all of the default options. This will open a new Codespace with all the tools you need to run this workshop.
-
-### 2. Local w/ Example Monorepo or BYOM (Bring Your Own Monorepo)
 To run the workshop locally, you will need to install the following:
 
 ### Tools
@@ -22,8 +16,11 @@ To run the workshop locally, you will need to install the following:
   - [Linux](https://git-scm.com/download/linux)
   - [MacOS](https://git-scm.com/download/mac)
   - [Windows](https://git-scm.com/download/win)
-- git filter-repo
-- git-sizer 
+- [git filter-repo](https://github.com/newren/git-filter-repo)
+  - Requires python3 >= 3.5
+  - `pip3 install git-filter-repo`
+- [git-sizer](https://github.com/github/git-sizer)
+  - Download and extract a .zip for the appropriate platform
 
 If you do not have a local fresh clone of a monorepo of your own to experiment with, you may also clone from the example repo that is used throughout the examples in the workshop:
 - Clone git-merge-workshops/a-bad-monorepo
