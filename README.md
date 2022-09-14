@@ -24,16 +24,18 @@ To run the workshop locally, you will need to install the following:
   - `pip3 install git-filter-repo`
 - [git-sizer](https://github.com/github/git-sizer)
   - Download and extract a .zip [for the appropriate platform](https://github.com/github/git-sizer#getting-started)
-  - Alternatively, if you have go install, you can run: `go get github.com/github/git-sizer`
+  - Alternatively, if you have `go` installed, you can run install git-sizer with the go package manager: 
+    - `go get github.com/github/git-sizer`
 
 ### Repository
 If you do not have a local fresh clone of a monorepo of your own to experiment with, you may also clone from the example repo that is used throughout the examples in this workshop:
-- Clone git-merge-workshops/a-bad-monorepo
+- Clone [git-merge-workshops/a-bad-monorepo](https://github.com/git-merge-workshops/a-bad-monorepo)
+
 ```bash
 git clone https://github.com/git-merge-workshops/a-bad-monorepo.git
 ```
 
-You will then want to make an additional copy of the repository as we experiment with different methods of clean up. 
+You will then want to create an additional copy of the repository as we experiment with different methods of clean up. 
 
 ```bash
 cp -r a-bad-monorepo a-bad-monorepo-filter-repo
