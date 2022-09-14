@@ -19,7 +19,7 @@ To run the workshop locally, you will need to install the following:
   - [Linux](https://git-scm.com/download/linux)
   - [MacOS](https://git-scm.com/download/mac)
   - [Windows](https://git-scm.com/download/win)
-- [git filter-repo][(https://github.com/newren/git-filter-repo)](https://github.com/newren/git-filter-repo/blob/main/INSTALL.md)
+- [git filter-repo](https://github.com/newren/git-filter-repo/blob/main/INSTALL.md)
   - Requires python3 >= 3.5
   - `pip3 install git-filter-repo`
 - [git-sizer](https://github.com/github/git-sizer)
