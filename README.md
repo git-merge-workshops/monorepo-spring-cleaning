@@ -6,7 +6,7 @@
   <a href="#books-resources">Resources</a>
 </p>
 
-> This workshop is a hands-on session to help you clean up your monorepo. We will be using popular open source tools to discover and aid in the removal of large binaries. We will also learn methods of decreaqsing the size of our repository, but still preserving git history by using git replace to graft two repositories together.
+> This workshop is a hands-on session to help you clean up your monorepo. We will be using popular open source tools to discover and aid in the removal of large binaries. We will also learn methods of decreasing the size of our repository, but still preserving git history by using git replace to graft two repositories together.
 
 ## :mega: Prerequisites
 To run the workshop locally, you will need to install the following:
@@ -16,27 +16,27 @@ To run the workshop locally, you will need to install the following:
   - [Linux](https://git-scm.com/download/linux)
   - [MacOS](https://git-scm.com/download/mac)
   - [Windows](https://git-scm.com/download/win)
-- [git filter-repo](https://github.com/newren/git-filter-repo)
+- [git filter-repo][(https://github.com/newren/git-filter-repo)](https://github.com/newren/git-filter-repo/blob/main/INSTALL.md)
   - Requires python3 >= 3.5
   - `pip3 install git-filter-repo`
 - [git-sizer](https://github.com/github/git-sizer)
-  - Download and extract a .zip for the appropriate platform
+  - Download and extract a .zip [for the appropriate platform](https://github.com/github/git-sizer#getting-started)
+  - Alternatively, if you have go install, you can run: `go get github.com/github/git-sizer`
 
-If you do not have a local fresh clone of a monorepo of your own to experiment with, you may also clone from the example repo that is used throughout the examples in the workshop:
+### Repository
+If you do not have a local fresh clone of a monorepo of your own to experiment with, you may also clone from the example repo that is used throughout the examples in this workshop:
 - Clone git-merge-workshops/a-bad-monorepo
 ```bash
 git clone https://github.com/git-merge-workshops/a-bad-monorepo.git
 ```
 
-You will then want to make numerous copies of the repository as we experiment with different methods of cleaning up the repository. 
+You will then want to make an additional copy of the repository as we experiment with different methods of clean up. 
 
 ```bash
 cp -r a-bad-monorepo a-bad-monorepo-filter-repo
-cp -r a-bad-monorepo a-bad-monorepo-graft
 ```
 
 ## :mag: Activity 1: Analyse 
-
 ### Gathering overall stats with `git-sizer`
 [Git Sizer Stats](lessons/git-sizer-stats.md)
 
