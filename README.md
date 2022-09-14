@@ -11,7 +11,7 @@
 ## :mega: Prerequisites
 There are 2 options for running this workshop:
 
-### 1. Codespaces w/ linux monorepo
+### 1. Codespaces
 Within this repository, click on the `Code` button and select [`Open with Codespaces`](https://github.com/codespaces/new?repo=git-merge-workshops/monorepo-spring-cleaning). Select all of the default options. This will open a new Codespace with all the tools you need to run this workshop.
 
 ### 2. Local w/ BYOM (Bring Your Own Monorepo)
