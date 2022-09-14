@@ -1,3 +1,6 @@
+<p align="center">
+  <img width="150" height="150" src="https://ghicons.github.com/assets/images/blue/png/Daily%20experience.png" />
+</p>
 <h1 align="center">Monorepo Spring Cleaning</h1>
 <h5 align="center">@pmartindev</h3>
 
