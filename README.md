@@ -14,8 +14,8 @@ There are 2 options for running this workshop:
 ### 1. Codespaces
 Within this repository, click on the `Code` button and select [`Open with Codespaces`](https://github.com/codespaces/new?repo=git-merge-workshops/monorepo-spring-cleaning). Select all of the default options. This will open a new Codespace with all the tools you need to run this workshop.
 
-### 2. Local w/ BYOM (Bring Your Own Monorepo)
-If you don't have Docker installed, you can run the workshop locally, you will need to install the following tools:
+### 2. Local w/ Example Monorepo or BYOM (Bring Your Own Monorepo)
+To run the workshop locally, you will need to install the following:
 
 ### Tools
 - Git 2.34 or newer
@@ -25,10 +25,17 @@ If you don't have Docker installed, you can run the workshop locally, you will n
 - git filter-repo
 - git-sizer 
 
-# If you also do not have a monorepo of your own, you may also clone from the example repo that is used within codespaces:
+If you do not have a local fresh clone of a monorepo of your own to experiment with, you may also clone from the example repo that is used throughout the examples in the workshop:
 - Clone git-merge-workshops/a-bad-monorepo
 ```bash
-https://github.com/git-merge-workshops/a-bad-monorepo.git
+git clone https://github.com/git-merge-workshops/a-bad-monorepo.git
+```
+
+You will then want to make numerous copies of the repository as we experiment with different methods of cleaning up the repository. 
+
+```bash
+cp -r a-bad-monorepo a-bad-monorepo-filter-repo
+cp -r a-bad-monorepo a-bad-monorepo-graft
 ```
 
 ## :mag: Activity 1: Analyse 
@@ -50,8 +57,8 @@ https://github.com/git-merge-workshops/a-bad-monorepo.git
 ### Grafting a repository
 [Repository Grafting](lessons/repository-grafting.md)
 
-### :star: Conclusion 
-Thank you for taking the time to walkthrough this workshop on cleaning up a monorepo!:tada: I hope you learned something new and are able to apply some of these techniques in your own monorepo analysis. Please check out the other presentations on Monorepos at Git Merge 2022.
+### :star: Final Conclusion 
+Thank you for taking the time to walkthrough this workshop on cleaning your monorepo!:tada: I hope you learned something new and are able to apply some of these techniques in your own monorepo analysis. Please check out the other presentations on Monorepos at Git Merge 2022.
 
 ## :books: Resources
 - [The Monorepo Book](https://monorepo-book.github.io/)
