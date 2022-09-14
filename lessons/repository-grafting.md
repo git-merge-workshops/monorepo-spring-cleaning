@@ -9,7 +9,7 @@ Our first step is to copy our monorepo into a new directory. We will use one as 
 cp -r /source/a-bad-monorepo /source/a-bad-monorepo-historical
 ```
 
-Next, we will take our future development repository (a-bad-monorepo) and create it as a new repository, with the base commit as the HEAD of the historical repository. The easiest and simplest method of doing this is to delete our `.git` directory, and re-initialize it as a new git repo. We can do this by running the following commands:
+Next, we will take our future development repository (a-bad-monorepo), and create it as a new repository with the base commit as the HEAD of the historical repository. The easiest and simplest method of doing this is to delete our `.git` directory, and re-initialize it as a new git repo. We can do this by running the following commands:
 
 ```bash
 cd /source/a-bad-monorepo
@@ -17,7 +17,7 @@ rm -rf .git
 git init
 ```
 
-Next, we need to add and commit all of the new files to our repository. Remember, this is the new starting for all future development, so it is a good idea to leave behind a trace of the historical repository. We can do this by adding a commit message that references the historical repository. 
+Next, we need to add and commit all of the new files to our repository. Remember, this is the new starting point for all future development, so it is a good idea to leave behind a trace of the historical repository. We can do this by adding a commit message that references the historical repository. 
 
 ```bash
 git add --all
