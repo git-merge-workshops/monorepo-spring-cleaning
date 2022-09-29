@@ -41,7 +41,7 @@ You will then want to create an additional copy of the repository as we experime
 cp -r a-bad-monorepo a-bad-monorepo-filter-repo
 ```
 
-## :mag: Activity 1: Analyse 
+## :mag: Activity 1: Analyze 
 ### Gathering overall stats with `git-sizer`
 [Git Sizer Stats](lessons/git-sizer-stats.md)
 
